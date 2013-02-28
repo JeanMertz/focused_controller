@@ -28,7 +28,8 @@ module FocusedController
     end
 
     def cookie_jar
-      @cookie_jar ||= ActionDispatch::Cookies::CookieJar.new
+      key = ActionDispatch::Cookies::GENERATOR_KEY
+      @cookie_jar ||= ActionDispatch::Cookies::CookieJar.new(key)
     end
 
     def flash
