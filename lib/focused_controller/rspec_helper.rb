@@ -26,6 +26,7 @@ module FocusedController
     end
 
     if defined?(RSpec::Rails)
+      extend ActiveSupport::Concern
       include RSpec::Rails::RailsExampleGroup
       include RSpec::Rails::Matchers::RedirectTo
       include RSpec::Rails::Matchers::RenderTemplate
